@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import Character from './components/Character';
+import uuid from 'uuid/dist/v4';
 
 
 const App = () => {
@@ -29,14 +30,18 @@ const App = () => {
     }
     fetchChar();
   }, [])
+  
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
       {
         chars.map(char => {
+          const charId = uuid();
           return <Character
           info={char}
+          key={charId}
+          id={charId}
           />
         })}
     </div>
