@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import Character from './components/Character';
+import Details from './components/Details';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -13,6 +14,16 @@ const App = () => {
 
   // set state to get and set characters
   const [chars, setChars] = useState([]);
+  // set state for selected char id
+  const [currentCharId, setCurrentCharId] = useState(null);
+
+  const openDetails = id => {
+    setCurrentCharId(id)
+  }
+
+  const closeDetails = () => {
+    setCurrentCharId(null)
+  }
 
   // make a (mock) api call to get characters data from link, then set characters to characters list
   useEffect(() => {
@@ -37,10 +48,14 @@ const App = () => {
         chars.map((char, idx) => {
           return <Character
           info={char}
-          key={idx}
-          id={idx}
+          key={idx + 1}
+          id={idx + 1}
+          action={openDetails}
+          currentCharId={currentCharId}
+          closeDetails={closeDetails}
           />
         })}
+        
     </div>
   );
 }
