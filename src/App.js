@@ -2,7 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import Character from './components/Character';
-import Details from './components/Details';
+import styled from 'styled-components';
+
+
+const StyledAppContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-image: url('./images/star-wars-backgrounds-16.jpg');
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -43,7 +52,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <h1 className="Header">React Wars: Choose Your Fighter</h1>
+      <StyledAppContainer>
       {
         chars.map((char, idx) => {
           return <Character
@@ -55,6 +65,7 @@ const App = () => {
           closeDetails={closeDetails}
           />
         })}
+      </StyledAppContainer>
         
     </div>
   );
