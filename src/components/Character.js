@@ -8,7 +8,7 @@ const StyledCharacter = styled.div`
     /* border: 2px solid red; */
     border-radius: 8px;
     box-shadow: 5px 5px 15px red;
-    width: 40%;
+    width: 30%;
     background-color: #d8d9dc;
     color: #41484e;
     margin: 3%;

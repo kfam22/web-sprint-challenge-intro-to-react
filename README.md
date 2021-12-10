@@ -78,7 +78,24 @@ After finishing your required elements, you can push your work further. These go
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Put your answers underneath the questions:
 
-1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
-1. Describe component state.
-1. Describe props.
-1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+1. What is React JS and what problems does it solve? Support your answer with 
+concepts introduced in class and from your personal research on the web.
+
+React JS is a Javascript library used for building UI that allows for constantly changing data to render without reloading a page.  It's main purpose is speed, scalability, and simplicity.
+ 
+- React is component based which makes it easily scalable.
+- React uses the virtual DOM which means that it keeps a copy which it compares to the updated version of the DOM in a process called diffing.  Then it only updates the parts of the DOM which have changed rather than the entire DOM.
+
+2. Describe component state.
+
+State refers to an object containing a set of observable properties that control the behavior of a component.  These properties have the ability to change and these changes can alter the way a component functions.
+
+3. Describe props.
+
+Props (short for properties) are objects used to pass data between components.  Props are passed by declaring attributes for any HTML tag and have ini-directional flow, from parent to child.
+
+4. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+Side effects are anything that affect something outside the scope of the function being executed.  Examples include fetching data from an API, timers, logging, and manually manipulating the DOM.  The effect hook allows us programmers to sync side effects by taking a callback function and a dependency array as parameters.  The dependency array tells the effect when/after which changes to run.
+
+
